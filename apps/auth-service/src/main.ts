@@ -42,6 +42,8 @@ async function bootstrap() {
   setupSwagger(app, appName, ['/auth-service']);
   await app.init();
 
+  await app.listen(appPort);
+
   logBootstrapInfo(app, {
     nodeEnv,
     logger,

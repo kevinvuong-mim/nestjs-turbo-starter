@@ -73,6 +73,7 @@ async function bootstrap() {
   await app.connectMicroservice<MicroserviceOptions>(grpcConfig);
 
   await app.startAllMicroservices();
+  await app.listen(appPort);
 
   logBootstrapInfo(app, {
     nodeEnv,
